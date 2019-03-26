@@ -38,10 +38,9 @@ open class Channel {
 			self?.presence.sync(response)
 		}
 
-        //Recover Channel
+        //Detect Error
         on(Socket.Event.Error) { [weak self] (response) in
             self?.state = .Errored
-            self?.join()
         }
     }
 
