@@ -33,6 +33,12 @@ public final class Socket {
         return socket.isConnected
     }
     
+    public var sslClientCertificate: SSLClientCertificate? {
+        didSet {
+            socket.sslClientCertificate = self.sslClientCertificate
+        }
+    }
+    
     // MARK: - Initialisation
     
     public init(url: URL, params: [String: String]? = nil) {
